@@ -16,9 +16,7 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
-      <parameter key="NataliaHelloBundle">Natalia\HelloBundle\NataliaHelloBundle</parameter>
-      <parameter key="ShrimpsBundle">Natali\ShrimpsBundle\ShrimpsBundle</parameter>
-      <parameter key="NataliaTadeuszBundle">Natalia\TadeuszBundle\NataliaTadeuszBundle</parameter>
+      <parameter key="ProjectMoviesRentalBundle">Project\MoviesRentalBundle\ProjectMoviesRentalBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2523,9 +2521,7 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection">
-              <argument key="NataliaTadeuszBundle">Natalia\TadeuszBundle\Entity</argument>
-            </argument>
+            <argument type="collection"/>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2538,19 +2534,7 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
-                      <argument type="service" id="annotation_reader"/>
-                      <argument type="collection">
-                        <argument>/home/studenci/r12/s179447/public_html/src/Natalia/TadeuszBundle/Entity</argument>
-                      </argument>
-                    </service>
-                  </argument>
-                  <argument>Natalia\TadeuszBundle\Entity</argument>
-                </call>
-              </service>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -2989,16 +2973,8 @@
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/studenci/r12/s179447/public_html/src/Natalia/HelloBundle/Resources/views</argument>
-        <argument>NataliaHello</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/studenci/r12/s179447/public_html/src/Natali/ShrimpsBundle/Resources/views</argument>
-        <argument>Shrimps</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/studenci/r12/s179447/public_html/src/Natalia/TadeuszBundle/Resources/views</argument>
-        <argument>NataliaTadeusz</argument>
+        <argument>/home/studenci/r12/s179447/public_html/src/Project/MoviesRentalBundle/Resources/views</argument>
+        <argument>ProjectMoviesRental</argument>
       </call>
       <call method="addPath">
         <argument>/home/studenci/r12/s179447/public_html/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

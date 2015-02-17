@@ -1,4 +1,0 @@
-services:
-#    shrimps.example:
-#        class: Natali\ShrimpsBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

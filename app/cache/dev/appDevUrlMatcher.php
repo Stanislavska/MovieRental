@@ -127,75 +127,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/shrimps')) {
-            // main_homepage
-            if (rtrim($pathinfo, '/') === '/shrimps') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'main_homepage');
-                }
-
-                return array (  '_controller' => 'Natali\\ShrimpsBundle\\Controller\\DefaultController::mainAction',  '_route' => 'main_homepage',);
+        // project_movies_rental_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'project_movies_rental_homepage');
             }
 
-            // tiger_homepage
-            if ($pathinfo === '/shrimps/tiger.html') {
-                return array (  '_controller' => 'Natali\\ShrimpsBundle\\Controller\\TigerController::tigerAction',  '_route' => 'tiger_homepage',);
-            }
-
-            // sri_lanka_dwarf_homepage
-            if ($pathinfo === '/shrimps/sri_lanka_dwarf.html') {
-                return array (  '_controller' => 'Natali\\ShrimpsBundle\\Controller\\SriLankaDwarfController::sriLankaDwarfAction',  '_route' => 'sri_lanka_dwarf_homepage',);
-            }
-
-            // blue_tail_homepage
-            if ($pathinfo === '/shrimps/blue_tail.html') {
-                return array (  '_controller' => 'Natali\\ShrimpsBundle\\Controller\\BlueTailController::blueTailAction',  '_route' => 'blue_tail_homepage',);
-            }
-
-        }
-
-        // natalia_hello_homepage
-        if (0 === strpos($pathinfo, '/hw/hello') && preg_match('#^/hw/hello/(?P<firstname>[^/]++)/(?P<lastname>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'natalia_hello_homepage')), array (  '_controller' => 'Natalia\\HelloBundle\\Controller\\DefaultController::indexAction',));
-        }
-
-        if (0 === strpos($pathinfo, '/PanTadeusz')) {
-            // natalia_tadeusz_homepage
-            if (rtrim($pathinfo, '/') === '/PanTadeusz') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'natalia_tadeusz_homepage');
-                }
-
-                return array (  '_controller' => 'Natalia\\TadeuszBundle\\Controller\\DefaultController::indexAction',  '_route' => 'natalia_tadeusz_homepage',);
-            }
-
-            // natalia_tadeusz_book
-            if (0 === strpos($pathinfo, '/PanTadeusz/Book') && preg_match('#^/PanTadeusz/Book/(?P<book>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'natalia_tadeusz_book')), array (  '_controller' => 'Natalia\\TadeuszBundle\\Controller\\DefaultController::bookAction',));
-            }
-
-            if (0 === strpos($pathinfo, '/PanTadeusz/Reflections')) {
-                // natalia_tadeusz_reflections_add
-                if ($pathinfo === '/PanTadeusz/Reflections/Add') {
-                    return array (  '_controller' => 'Natalia\\TadeuszBundle\\Controller\\ReflectionsController::addAction',  '_route' => 'natalia_tadeusz_reflections_add',);
-                }
-
-                // natalia_tadeusz_reflections_index
-                if (rtrim($pathinfo, '/') === '/PanTadeusz/Reflections') {
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'natalia_tadeusz_reflections_index');
-                    }
-
-                    return array (  '_controller' => 'Natalia\\TadeuszBundle\\Controller\\ReflectionsController::indexAction',  '_route' => 'natalia_tadeusz_reflections_index',);
-                }
-
-                // natalia_tadeusz_reflections_show
-                if (0 === strpos($pathinfo, '/PanTadeusz/Reflections/Show') && preg_match('#^/PanTadeusz/Reflections/Show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'natalia_tadeusz_reflections_show')), array (  '_controller' => 'Natalia\\TadeuszBundle\\Controller\\ReflectionsController::showAction',));
-                }
-
-            }
-
+            return array (  '_controller' => 'Project\\MoviesRentalBundle\\Controller\\DefaultController::indexAction',  '_route' => 'project_movies_rental_homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
