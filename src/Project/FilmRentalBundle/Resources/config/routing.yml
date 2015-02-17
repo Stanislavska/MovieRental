@@ -1,0 +1,3 @@
+project_film_rental_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProjectFilmRentalBundle:Default:index }

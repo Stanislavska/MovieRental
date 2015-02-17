@@ -1,0 +1,16 @@
+{% extends "ShrimpsBundle::layout.html.twig" %}
+{% block contents %}
+	<h3>Sri Lanka Dwarf Shrimp</h3>
+		<dl>
+			<dt>Size</dt>
+			<dd>2.5-3.5cmm</dd>
+			<dt>Water parameters</dt>
+			<dd>Water parameters are not important as long as you have clean, dechlorinated tap water and a cycled and *mature* tank.</dd>
+			<dt>Photo</dt>
+			<dd><img src="{{ asset('bundles/shrimps/images/sri_lanka_dwarf_shrimp.jpg') }}" /></dd>
+		</dl>
+	<h4>Shrimps</h4>
+	<a href="{{ path('tiger_homepage') }}">Tiger Shrimp</a><br>
+	<a href="{{ path('sri_lanka_dwarf_homepage') }}">Sri Lanka Dwarf Shrimp</a><br>
+	<a href="{{ path('blue_tail_homepage') }}">Blue Tail Shrimp</a><br>
+{% endblock %}

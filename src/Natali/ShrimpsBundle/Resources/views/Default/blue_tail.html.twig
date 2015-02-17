@@ -1,0 +1,16 @@
+{% extends "ShrimpsBundle::layout.html.twig" %}
+{% block contents %}
+	<h3>Blue Tail Shrimp</h3>
+		<dl>
+			<dt>Size</dt>
+			<dd>up to 3cmm</dd>
+			<dt>Water parameters</dt>
+			<dd>Water with alkaline pH recommended. Exact pH not important.</dd>
+			<dt>Photo</dt>
+			<dd><img src="{{ asset('bundles/shrimps/images/blue_tail_shrimp.jpg') }}" /></dd>
+		</dl>
+	<h4>Shrimps</h4>
+	<a href="{{ path('tiger_homepage') }}">Tiger Shrimp</a><br>
+	<a href="{{ path('sri_lanka_dwarf_homepage') }}">Sri Lanka Dwarf Shrimp</a><br>
+	<a href="{{ path('blue_tail_homepage') }}">Blue Tail Shrimp</a><br>
+{% endblock %}

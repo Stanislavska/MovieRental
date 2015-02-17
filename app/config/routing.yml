@@ -1,0 +1,15 @@
+project_film_rental:
+    resource: "@ProjectFilmRentalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+shrimps:
+    resource: "@ShrimpsBundle/Resources/config/routing.yml"
+    prefix:   /shrimps
+
+natalia_hello:
+    resource: "@NataliaHelloBundle/Resources/config/routing.yml"
+    prefix:   /hw
+
+natalia_tadeusz:
+    resource: "@NataliaTadeuszBundle/Resources/config/routing.yml"
+    prefix:   /PanTadeusz

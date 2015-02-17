@@ -1,0 +1,3 @@
+natalia_hello_homepage:
+    path:     /hello/{firstname}/{lastname}
+    defaults: { _controller: NataliaHelloBundle:Default:index }

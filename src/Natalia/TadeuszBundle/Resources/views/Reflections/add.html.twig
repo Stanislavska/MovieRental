@@ -1,0 +1,17 @@
+{% extends 'NataliaTadeuszBundle::bars.html.twig' %}
+
+{% block header %}
+	<h1 class="text-muted" align="center">Add Reflection</h1>
+{% endblock %}
+
+{% block content %}
+	<form role="form" method="POST">
+		
+		{%for child in form.children %}
+			<div class="form-group">
+				{{ form_row(child) }}
+			</div>
+		{% endfor %}
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+natalia_tadeusz_homepage:
+    path:     /
+    defaults: { _controller: NataliaTadeuszBundle:Default:index }
+
+natalia_tadeusz_book:
+    path:     /Book/{book}
+    defaults: { _controller: NataliaTadeuszBundle:Default:book }
+
+natalia_tadeusz_reflections_add:
+    path:     /Reflections/Add
+    defaults: { _controller: NataliaTadeuszBundle:Reflections:add }
+
+natalia_tadeusz_reflections_index:
+    path:     /Reflections/
+    defaults: { _controller: NataliaTadeuszBundle:Reflections:index }
+
+natalia_tadeusz_reflections_show:
+    path:     /Reflections/Show/{id}
+    defaults: { _controller: NataliaTadeuszBundle:Reflections:show }
