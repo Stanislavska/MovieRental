@@ -1,1 +1,3 @@
 test content
+
+Arturs first new feature
